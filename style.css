@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100svh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,6 +34,10 @@ body {
     cursor: pointer;
 }
 
+#envelope-container p {
+    font-size: clamp(18px, 5vw, 40px);
+}
+
 #letter-container{
     display: none;
     position:fixed;
@@ -42,10 +47,14 @@ body {
 }
 
 .letter-window{
-    width: 90vw;
-    max-width: 800px;
+    width: min(92vw, 800px);
+    max-height: 90svh;
+    /*max-width: 800px;*/
     aspect-ratio: 3/2;
-    padding: 20px 20px 0 20px;
+    padding-top: clamp(90px, 18vw, 180px); /* było sztywne 180px */
+    padding-left: clamp(12px, 3vw, 20px);
+    padding-right: clamp(12px, 3vw, 20px);
+    padding-bottom: clamp(10px, 2vw, 20px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,7 +79,7 @@ body {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: clamp(20px, 4.5vw, 32px);
     margin:0;
 }
 
@@ -81,13 +90,13 @@ p {
 /* Cat */
 
 .cat {
-    width: 250px;
+    width: clamp(160px, 45vw, 250px);
     margin: 10px 0;
     transition: width 0.4s ease;
 }
 
 .letter-window.final .cat {
-    width: 380px;
+    width: clamp(220px, 60vw, 380px);
 }
 
 /* buttons */
@@ -106,6 +115,12 @@ p {
     width: 120px;
     cursor: pointer;
     user-select: none;
+}
+
+.btn,
+.yes-btn,
+.no-btn {
+  width: clamp(84px, 20vw, 120px);
 }
 
 .yes-btn,
@@ -137,4 +152,15 @@ display: inline-block;
     padding: 10px 20px;
     background-color: rgba(255,240,240,0.5);
     border-radius: 12px;
+}
+
+@media (max-width: 420px){
+    .buttons {
+        gap: 16px;
+    }
+
+    .final-text {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
 }
