@@ -21,7 +21,6 @@ envelope.addEventListener("click", () => {
 });
 
 // Logic to move the NO btn
-
 function moveNoButton() {
   const windowEl = document.querySelector(".letter-window");
   const rect = windowEl.getBoundingClientRect();

@@ -164,3 +164,10 @@ display: inline-block;
         padding: 8px 12px;
     }
 }
+
+.no-btn {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none; /* ważne: pozwala JS przejąć gesty */
+}
