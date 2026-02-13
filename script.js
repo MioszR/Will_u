@@ -43,6 +43,11 @@ function moveNoButton() {
   noBtn.style.transform = `translate(${clampedX}px, ${clampedY}px)`;
 }
 
+noBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  moveNoButton();
+});
+
 noBtn.addEventListener("pointerenter", moveNoButton); // PC
 noBtn.addEventListener("pointerdown", (e) => {        // telefon
   e.preventDefault();
